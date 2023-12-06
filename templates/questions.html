@@ -1,0 +1,23 @@
+{% extends 'base.html' %} {% block title %}Question {{number}}{% endblock %} {% block content %}
+<h1>Satisfaction Survey</h1>
+<p>Instructions: Answer questions and click next when done</p>
+
+{% with messages = get_flashed_messages() %} {% if messages %} {% for message in messages %}
+<p class="flashes"><b>{{ message }}</b></p>
+{% endfor %} {% endif %} {% endwith %} {% if number == 0 %}
+<form action="/questions/{{number + 1}}">
+  <button>Start</button>
+</form>
+{% else %}
+<form action="/answer/{{number + 1}}" method="POST">
+  <p>{{question}}</p>
+  {% for choice in choices %}
+  <label> <input type="radio" name="user_choice" value="{{ choice }}" /> {{ choice }} </label><br />
+  {% endfor %}
+
+  <button>Next</button>
+</form>
+{% endif %} {% endblock %}
+
+<!-- is it alright to use /answer with numbers/ to then go back to redirect. no other way to pass the number info to the post reuest -->
+<!-- debug toolbar -->

@@ -1,0 +1,14 @@
+body {
+  margin: 20px;
+  font-family: Calibri;
+}
+
+.flashes {
+  background-color: rgba(247, 105, 17, 0.426);
+  font-size: 14px;
+  padding: 5px;
+}
+
+button {
+  margin: 5px;
+}
