@@ -1,7 +1,7 @@
 {% extends 'base.html' %} {% block title %}Home Page{% endblock %} {% block content %}
 <h1>Satisfaction Survey</h1>
 <p>Instructions: Answer questions and click next when done</p>
-<form action="/questions/1">
+<form action="/user-responses" method="post">
   <button>Next</button>
 </form>
 {% endblock %}

@@ -9,7 +9,7 @@
   <button>Start</button>
 </form>
 {% else %}
-<form action="/answer/{{number + 1}}" method="POST">
+<form action="/answer/{{number}}" method="POST">
   <p>{{question}}</p>
   {% for choice in choices %}
   <label> <input type="radio" name="user_choice" value="{{ choice }}" /> {{ choice }} </label><br />
@@ -19,5 +19,5 @@
 </form>
 {% endif %} {% endblock %}
 
-<!-- is it alright to use /answer with numbers/ to then go back to redirect. no other way to pass the number info to the post reuest -->
+<!-- use /answer with numbers/ to then go back to redirect. other way to pass the number info to the post reuest? -->
 <!-- debug toolbar -->
